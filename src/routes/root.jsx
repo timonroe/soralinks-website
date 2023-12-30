@@ -1,7 +1,5 @@
 import {
   useLoaderData,
-  useNavigation,
-  useSubmit,
 } from "react-router-dom";
 import {
   getNews,
@@ -22,8 +20,6 @@ export default function Root() {
   const { news } = useLoaderData();
   const { topHeadlines } = news;
   // console.log(`news: ${JSON.stringify(topHeadlines, null, 2)}`);
-  const navigation = useNavigation();
-  const submit = useSubmit();
 
   return (
     <>
