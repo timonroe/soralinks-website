@@ -18,6 +18,17 @@ const router = createBrowserRouter([
     loader: rootLoader,
     action: rootAction,
     errorElement: <ErrorPage />,
+    children: [
+      {
+        errorElement: <ErrorPage />,
+        children: [
+          {
+            path: "/index.html",
+            element: <Root />
+          },
+        ]
+      },
+    ],
   },
 ]);
 
