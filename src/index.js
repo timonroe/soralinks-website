@@ -1,39 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import './index.css'
-import Root, {
-  loader as rootLoader,
-  action as rootAction,
-} from "./routes/root";
-import ErrorPage from "./error-page";
+import './styles.css'
+import App from './App'
+import { HashRouter } from "react-router-dom"
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Root />,
-    loader: rootLoader,
-    action: rootAction,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        errorElement: <ErrorPage />,
-        children: [
-          {
-            path: "/index.html",
-            element: <Root />
-          },
-        ]
-      },
-    ],
-  },
-]);
+// HashRouter note:
+// When using client-side routing in a React app with react-router-dom and hosting the app on AWS S3 as a static website,
+// you'll need to handle the 404 errors that occur when users refresh the page or directly access a specific route.
+// This is because S3, being a static file server, doesn't inherently understand client-side routing.
+// Using HashRouter appends a # to the URLs, and this part of the URL is not sent to the server, making it compatible
+// with static hosting solutions like AWS S3.
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
+    <HashRouter>
+      <App />
+    </HashRouter>
+  </React.StrictMode>
 )

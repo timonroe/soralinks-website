@@ -47,3 +47,24 @@ export async function getNews() {
   return result;
 }
 
+export function getHeadlines(news, source) {
+  if (!news || !source) return [];
+  const scraperResponses = news && news.scraperResponses && news.scraperResponses.length ? news.scraperResponses : [];
+  if (!scraperResponses.length) return [];
+  const scraperResponse = scraperResponses.find(scraperResponse => scraperResponse.source === source);
+  if (!scraperResponse) return [];
+  const { headlines } = scraperResponse;
+  if (!headlines || !headlines.length) return [];
+  return headlines.map(headline => {
+    const { title, url } = headline;
+    if (!title | !url) return undefined;
+    return {
+      title: headline.title,
+      url: headline.url,
+    };
+  }).filter(Boolean);
+}
+
+export function getTrendingHeadlines(news) {
+  return news && news.topHeadlines && news.topHeadlines.length ? news.topHeadlines : [];
+}
