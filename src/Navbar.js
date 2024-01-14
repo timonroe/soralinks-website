@@ -28,6 +28,7 @@ export default function Navbar() {
         <CustomLink to="/cnn">CNN</CustomLink>
         <CustomLink to="/epochtimes">Epoch</CustomLink>
         <CustomLink to="/fox">Fox</CustomLink>
+        <CustomLink to="/newsweek">Newsweek</CustomLink>
         {/* <CustomLink to="/washexam">Examiner</CustomLink> */}
       </ul>
     </nav>

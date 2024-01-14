@@ -4,6 +4,7 @@ import Ap from "./pages/Ap"
 import Cnn from "./pages/Cnn"
 import EpochTimes from "./pages/EpochTimes";
 import Fox from "./pages/Fox"
+import Newsweek from "./pages/Newsweek"
 /* import WashExam from "./pages/WashExam" */
 
 export default function Headlines({ news }) {
@@ -33,6 +34,10 @@ export default function Headlines({ news }) {
         <Route
           path="/fox"
           element={<Fox news={news} />}
+        />
+        <Route
+          path="/newsweek"
+          element={<Newsweek news={news} />}
         />
         {/*
         <Route
