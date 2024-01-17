@@ -21,10 +21,11 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <Link to="/" className="navbar-title">News</Link>
+      <Link to="/trending" className="navbar-title">News</Link>
       <ul>
         <CustomLink to="/trending">Trending</CustomLink>
         <CustomLink to="/ap">AP</CustomLink>
+        <CustomLink to="/bbc">BBC</CustomLink>
         <CustomLink to="/cnn">CNN</CustomLink>
         <CustomLink to="/epochtimes">Epoch</CustomLink>
         <CustomLink to="/fox">Fox</CustomLink>

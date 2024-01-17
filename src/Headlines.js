@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom"
 import Trending from "./pages/Trending"
 import Ap from "./pages/Ap"
+import Bbc from "./pages/Bbc"
 import Cnn from "./pages/Cnn"
 import EpochTimes from "./pages/EpochTimes";
 import Fox from "./pages/Fox"
@@ -22,6 +23,10 @@ export default function Headlines({ news }) {
         <Route
           path="/ap"
           element={<Ap news={news} />}
+        />
+         <Route
+          path="/bbc"
+          element={<Bbc news={news} />}
         />
         <Route
           path="/cnn"
