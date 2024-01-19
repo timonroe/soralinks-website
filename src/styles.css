@@ -29,16 +29,15 @@ body {
 .navbar {
   margin: 0;
   padding: 1rem 1rem;
-  gap: .5rem;
+  gap: 1rem;
   line-height: 1.0;
-  /* background-color: #708090; */
   background-color: black;
   color: white;
   display: flex;
   flex-direction: row;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-items: stretch;
+  /* align-items: stretch; */
 }
 
 .navbar .navbar-title {
@@ -57,6 +56,11 @@ body {
   gap: .75rem;
   align-items: center;
   display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  align-items: center;
   list-style: none;
 }
 
@@ -68,7 +72,6 @@ body {
 .navbar ul li a {
   margin: 0;
   padding: 0;
-  display: flex;
   align-items: center;
   text-decoration: none;
   color: white;
