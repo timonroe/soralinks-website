@@ -31,6 +31,7 @@ export default function Navbar() {
         <CustomLink to="/fox">Fox</CustomLink>
         <CustomLink to="/newsweek">Newsweek</CustomLink>
         {/* <CustomLink to="/washexam">Examiner</CustomLink> */}
+        <CustomLink to="/stats">Stats</CustomLink>
       </ul>
     </nav>
   )

@@ -33,14 +33,14 @@ export async function getNews() {
     result = await response.json();
   }
   catch (error) {
-    console.log(`Could not convert response to JSON: ${error.message}`);
+    console.error(`Could not convert response to JSON: ${error.message}`);
     throw error;
   }
   try {
     result = JSON.parse(result.body);
   }
   catch (error) {
-    console.log(`Could not parse result.body: ${error.message}`);
+    console.error(`Could not parse result.body: ${error.message}`);
     throw error;
   }
 
@@ -67,4 +67,8 @@ export function getHeadlines(news, source) {
 
 export function getTrendingHeadlines(news) {
   return news && news.topHeadlines && news.topHeadlines.length ? news.topHeadlines : [];
+}
+
+export function getTopTokens(news) {
+  return news && news.topTokens && news.topTokens.length ? news.topTokens : [];
 }

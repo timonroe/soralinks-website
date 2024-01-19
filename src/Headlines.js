@@ -7,6 +7,7 @@ import EpochTimes from "./pages/EpochTimes";
 import Fox from "./pages/Fox"
 import Newsweek from "./pages/Newsweek"
 /* import WashExam from "./pages/WashExam" */
+import Stats from "./pages/Stats"
 
 export default function Headlines({ news }) {
   return (
@@ -50,6 +51,10 @@ export default function Headlines({ news }) {
           element={<WashExam news={news} />}
         />
         */}
+        <Route
+          path="/stats"
+          element={<Stats news={news} />}
+        />
       </Routes>
     </div>
   )
